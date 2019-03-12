@@ -10,9 +10,9 @@ public class StartShot : MonoBehaviour {
 		gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * 500);
 		
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+	public void BallDestroy()
+	{
+		this.gameObject.SetActive(false);
 	}
 }
