@@ -10,6 +10,7 @@ public class GameMaster : MonoBehaviour {
 	public float nowTime;
 	public Text resultMessageText;	//	クリアした際に「クリア」と表示するテキスト
 	private bool isClear;
+	[SerializeField] private Score score;	//追加
 
 	// Use this for initialization
 	void Start () {
@@ -29,13 +30,14 @@ public class GameMaster : MonoBehaviour {
 
 	void StageClear(string resultMessage)
 	{
-		//DataSender.resultMessage = resultMessage;	//受け取った引数を変数に格納する
+		score.Save();	//追加
 		resultMessageText.text = resultMessage;	//画面にクリア状態を表示する
 		FindObjectOfType<LevelManager>().LevelUp();
 		Debug.Log("Clear!");
 	}
 
 	public void GameOver(string resultMessage) {	//引数を持たせた
+			score.Save();	//追加
 			DataSender.resultMessage = resultMessage;	//受け取った引数をstatic変数へ格納
 			SceneManager.LoadScene("ResultScene");
 	}

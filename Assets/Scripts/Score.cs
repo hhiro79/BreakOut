@@ -11,18 +11,21 @@ public class Score : MonoBehaviour {
 	public Text highScoreText;
 
 	// スコアのカウント用
-	private int score;
+	public static int score;	//public staticに
 
 	//ハイスコアのカウント用
-	private int highScore;
+	public static int highScore;	//public staticに
 
 	// PlayerPrefsで保存するためのキー
 	private string highScoreKey = "highScore";
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {		//StartをAwakeに
 
-		Initialize ();
+		if(!LevelManager.isStart)	//LevelManagerのisStartフラグがfalseの時のみ呼ぶ
+		{
+			Initialize ();
+		}
 	}
 	
 	// Update is called once per frame
@@ -60,7 +63,6 @@ public class Score : MonoBehaviour {
 		PlayerPrefs.SetInt (highScoreKey, highScore);
 		PlayerPrefs.Save ();
 
-		//ゲーム開始前の状態に戻す
-		Initialize ();
+		Debug.Log(highScore);
 	}
 }

@@ -45,6 +45,8 @@ public class Destroyer : MonoBehaviour {
 
 		//まだ壊れない場合
 		else{
+			//ブロックの色を変えるメソッドの呼び出し
+			FindObjectOfType<ChangeColorOnHit>().ChangeMaterialColor();		//追加
 			//ボールを跳ね返すSEを再生
 			AudioSource.PlayClipAtPoint(hitSE, transform.position);
 		}

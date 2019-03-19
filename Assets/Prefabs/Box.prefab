@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 65565995437486462}
   - component: {fileID: 23658201845115872}
   - component: {fileID: 114284783810745870}
+  - component: {fileID: 114732471115181162}
   m_Layer: 0
   m_Name: Box
   m_TagString: Untagged
@@ -109,3 +110,18 @@ MonoBehaviour:
   hitSE: {fileID: 8300000, guid: 832c5b4bc108343a1a0d30783ff262ce, type: 3}
   DestroySE: {fileID: 8300000, guid: 0456bb62aaa9641d4aec855837a58e63, type: 3}
   masterObj: {fileID: 0}
+--- !u!114 &114732471115181162
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1328842272988520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 998e6c16b33b3f6449585c60990ad31f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Colors:
+  - {r: 0.97794116, g: 0.87727076, b: 0.87727076, a: 0}
+  - {r: 0.07682743, g: 0.07878236, b: 0.3602941, a: 0}
+  - {r: 0.07682743, g: 0.3602941, b: 0.09051205, a: 0}
